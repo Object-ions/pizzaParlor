@@ -1,9 +1,9 @@
 // Buisness Logic:
 
 const pizzaSize = {
-  Small: 10,
-  Medium: 12,
-  Large: 13,
+  small: 10,
+  medium: 12,
+  large: 13,
 };
 
 const toppingsPrices = {
@@ -12,6 +12,7 @@ const toppingsPrices = {
   peppers: 0.5,
   olives: 0.5,
   tomatoes: 0.5,
+  anchovies: 1,
   pineapple: 1,
   artichoke: 1,
   pepperoni: 1.5
