@@ -1,28 +1,33 @@
-// Buisness Logic:pepperoni
-const basicPizzaSmall = 10;
-const basicPizzaMedium = 12;
-const basicPizzaLarge = 13;
-const mushrooms = 0.5;
-const onions = 0.5;
-const peppers = 0.5;
-const olives = 0.5;
-const tomatoes = 0.5;
-const pineapple = 1;
-const artichoke = 1;
-const pepperoni = 1.5;
+// Buisness Logic:
+
+const pizzaSize = {
+  Small: 10,
+  Medium: 12,
+  Large: 13,
+};
+
+const toppingsPrices = {
+  mushrooms: 0.5,
+  onions: 0.5,
+  peppers: 0.5,
+  olives: 0.5,
+  tomatoes: 0.5,
+  pineapple: 1,
+  artichoke: 1,
+  pepperoni: 1.5
+};
 
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
-};
+}
 
-function calcPrice(size, toppings) {
+Pizza.prototype.calcPrice = function () {
   let calcToppings = 0;
-  for (let i = 0; i < toppings.length; i++) {
-    calcToppings += toppings[i];
+  for (let i = 0; i < this.toppings.length; i++) {
+    calcToppings += toppingsPrices[this.toppings[i]];
   }
-  console.log(calcToppings);
-  return size + calcToppings;
+  return pizzaSize[this.size] + calcToppings;
 }
 
 // UI Logic:
