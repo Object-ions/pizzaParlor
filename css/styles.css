@@ -1,4 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+/* colors: blue = #283D9B
+        off-white = #F7F3EA
+        orange = #F79525
+        light orange = #FBC268
+        red = #F25A71 */
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Open+Sans:wght@300;400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -11,4 +17,9 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
+}
+
+h1 {
+  font-family: 'Bagel Fat One', cursive;
 }
