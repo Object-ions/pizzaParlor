@@ -39,10 +39,15 @@ let selectedToppings = [];
 checkedBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('click', function (event) {
     if (event.target.checked) {
-      console.log('success');
-      console.log(checkbox);
+      console.log(event.target.id);
+      selectedToppings.push(event.target.id)
+      console.log(selectedToppings);
     } else {
-      console.log('error');
+      console.log('error: ' + event.target.id + ' been removed');
+      let index = selectedToppings.indexOf(event.target.id);
+      console.log('removed: ' + index);
+      selectedToppings.splice(index);
+      console.log('new array: ' + selectedToppings);
     }
   });
 })
