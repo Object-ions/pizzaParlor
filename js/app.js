@@ -17,9 +17,12 @@ function Pizza(toppings, size) {
 };
 
 function calcPrice(size, toppings) {
-  let calcToppings;
-
-  return size + toppings
+  let calcToppings = 0;
+  for (let i = 0; i < toppings.length; i++) {
+    calcToppings += toppings[i];
+  }
+  console.log(calcToppings);
+  return size + calcToppings;
 }
 
 // UI Logic:
