@@ -21,14 +21,28 @@ const toppingsPrices = {
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
-}
+};
 
 Pizza.prototype.calcPrice = function () {
   let calcToppings = 0;
   for (let i = 0; i < this.toppings.length; i++) {
     calcToppings += toppingsPrices[this.toppings[i]];
-  }
+  };
   return pizzaSize[this.size] + calcToppings;
-}
+};
 
 // UI Logic:
+
+let checkedBoxes = document.querySelectorAll('#selectToppings input[type=checkbox]');
+let selectedToppings = [];
+
+checkedBoxes.forEach(function (checkbox) {
+  checkbox.addEventListener('click', function (event) {
+    if (event.target.checked) {
+      console.log('success');
+      console.log(checkbox);
+    } else {
+      console.log('error');
+    }
+  });
+})
