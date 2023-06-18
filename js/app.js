@@ -5,14 +5,16 @@ function Order() {
 };
 
 Order.prototype.addPizza = function (pizza) {
-  contact.id = this.assignId();
-  this.pizzas[piza.id] = pizza;
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
 };
 
 Order.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
 };
+
+let order = new Order();
 
 // Buisness Logic for pizza ---
 const pizzaSize = {
@@ -64,7 +66,7 @@ checkedBoxes.forEach(function (checkbox) {
       selectedToppings.push(event.target.id)
       // console.log(selectedToppings);
     } else {
-      console.log('error: ' + event.target.id + ' been removed');
+      // console.log('error: ' + event.target.id + ' been removed');
       let index = selectedToppings.indexOf(event.target.id);
       selectedToppings.splice(index, 1);
       // console.log('new array: ' + selectedToppings);
@@ -73,13 +75,19 @@ checkedBoxes.forEach(function (checkbox) {
   });
 });
 
-function cart() {
+function addToCart() {
   let cart = document.getElementById('cart');
   cart.addEventListener('click', function () {
-    let myPizza = new Pizza(selectedToppings, chosenSize);
-    console.log(chosenSize + ' pizza with: ' + selectedToppings);
-    console.log('price: ' + myPizza.calcPrice())
+    if (chosenSize !== undefined && selectedToppings.length > 0) {
+      let myPizza = new Pizza(selectedToppings, chosenSize);
+      order.addPizza(myPizza);
+      console.log(chosenSize + ' pizza with: ' + selectedToppings);
+      console.log('price: ' + myPizza.calcPrice());
+      console.log('order so far: ', order);
+    } else {
+      document.getElementById('error').textContent = 'select a pizza size toppings';
+    }
   });
 };
-cart();
+addToCart();
 
