@@ -15,3 +15,9 @@ Test: It should calculate the price right when declaring the variable
 Code: -> const myPizza = new Pizza(['pepperoni', 'onions', 'tomatoes'], 'small');
 -> myPizza.calcPrice()
 Expected Output: <- 12.5
+
+Describe: addToCart();
+
+Test: It should 
+Code: ->
+Expected Output: ->
