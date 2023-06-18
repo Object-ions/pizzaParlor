@@ -60,7 +60,11 @@ checkedBoxes.forEach(function (checkbox) {
 
 function cart() {
   let cart = document.getElementById('cart');
-  cart.addEventListener('click', function () {
-
+  cart.addEventListener('click', function (event) {
+    console.log('PADAM');
+    let myPizza = new Pizza(selectedToppings, chosenSize);
+    console.log('price: ' + myPizza.calcPrice());
   });
 };
+cart();
+

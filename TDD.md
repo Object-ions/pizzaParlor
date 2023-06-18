@@ -16,5 +16,6 @@ Code: -> const myPizza = new Pizza(['pepperoni', 'onions', 'tomatoes'], 'small')
 -> myPizza.calcPrice()
 Expected Output: <- 12.5
 
-Test: It should calculate the price right when declaring the variable from checkbox
+Describe: cart()
+Test: It should calculate the price after selecting 'size' and 'toppings' 
 Code: -> 
