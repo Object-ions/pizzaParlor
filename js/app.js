@@ -45,9 +45,9 @@ checkedBoxes.forEach(function (checkbox) {
     } else {
       console.log('error: ' + event.target.id + ' been removed');
       let index = selectedToppings.indexOf(event.target.id);
-      console.log('removed: ' + index);
-      selectedToppings.splice(index);
+      selectedToppings.splice(index, 1);
       console.log('new array: ' + selectedToppings);
-    }
+    };
+    console.log('final array: ' + selectedToppings);
   });
 })
