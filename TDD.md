@@ -16,16 +16,5 @@ Code: -> const myPizza = new Pizza(['pepperoni', 'onions', 'tomatoes'], 'small')
 -> myPizza.calcPrice()
 Expected Output: <- 12.5
 
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener('change', (event) => {
-      if (event.target.checked) {
-        selectedToppings.push(event.target.id);
-      } else {
-        const index = selectedToppings.indexOf(event.target.id);
-        if (index > -1) {
-          selectedToppings.splice(index, 1);
-        }
-      }
-      console.log(selectedToppings); // You can use this array to calculate the price
-    });
-  });
+Test: It should calculate the price right when declaring the variable from checkbox
+Code: -> 

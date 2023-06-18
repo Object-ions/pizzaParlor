@@ -16,10 +16,11 @@
   </div>
   <div>
     <h3>choose your size:</h3>
-    <select>
-      <option value="small">small</option>
-      <option value="medium">medium</option>
-      <option value="large">large</option>
+    <select id="sizeSelection">
+      <option>select</option>
+      <option id="small" value="small">small</option>
+      <option id="medium" value="medium">medium</option>
+      <option id="large" value="large">large</option>
     </select>
     <h3>select your toppings:</h3>
     <div id="selectToppings">
@@ -62,8 +63,7 @@
     </div>
     <div>
       <small id="error">Error message here</small>
-      <button>go to cart</button>
-      <button>order now</button>
+      <button id="cart">go to cart</button>
     </div>
   </div>
 
