@@ -1,5 +1,20 @@
-// Buisness Logic:
+// Buisness Logic for order ---
+function Order() {
+  this.pizzas = {};
+  this.currentId = 0;
+};
 
+Order.prototype.addPizza = function (pizza) {
+  contact.id = this.assignId();
+  this.pizzas[piza.id] = pizza;
+};
+
+Order.prototype.assignId = function () {
+  this.currentId += 1;
+  return this.currentId;
+};
+
+// Buisness Logic for pizza ---
 const pizzaSize = {
   small: 10,
   medium: 12,
@@ -39,7 +54,7 @@ let selectedToppings = [];
 let chosenSize;
 document.getElementById("sizeSelection").addEventListener("change", function (e) {
   chosenSize = e.target.value;
-  console.log(chosenSize);
+  // console.log(chosenSize);
 });
 
 checkedBoxes.forEach(function (checkbox) {
@@ -54,16 +69,16 @@ checkedBoxes.forEach(function (checkbox) {
       selectedToppings.splice(index, 1);
       // console.log('new array: ' + selectedToppings);
     };
-    console.log('final array: ' + selectedToppings);
+    // console.log('final array: ' + selectedToppings);
   });
 });
 
 function cart() {
   let cart = document.getElementById('cart');
-  cart.addEventListener('click', function (event) {
-    console.log('PADAM');
+  cart.addEventListener('click', function () {
     let myPizza = new Pizza(selectedToppings, chosenSize);
-    console.log('price: ' + myPizza.calcPrice());
+    console.log(chosenSize + ' pizza with: ' + selectedToppings);
+    console.log('price: ' + myPizza.calcPrice())
   });
 };
 cart();
