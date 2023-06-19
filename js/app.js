@@ -71,6 +71,9 @@ function addToCart() {
       error.classList.add('invisible');
     }
     removeSelectionStyle();
+    let checkout = document.getElementById('check-out');
+    checkout.removeAttribute('class', 'invisible');
+    checkout.setAttribute('class', 'visible');
   });
 };
 addToCart();
