@@ -31,8 +31,8 @@ The project also includes error handling to prompt the user if they try to add a
 
 ## Known Bugs
 
-2 known bugs:
-* 1. 'Regular' menu is impossible to 'add to cart'
+1 known bugs:
+* 'Regular' menu is impossible to 'add to cart'
 
 ## License
 
