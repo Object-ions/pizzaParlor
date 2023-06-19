@@ -18,6 +18,7 @@ Expected Output: <- 12.5
 
 Describe: addToCart();
 
-Test: It should 
-Code: ->
-Expected Output: ->
+Test: It should return a node list with the selected checkbox(es)
+Code: -> selectedToppings.push(e.target.id)
+Expected Output: -> ['mushrooms', 'onions', 'peppers']
+

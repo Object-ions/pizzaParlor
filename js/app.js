@@ -106,7 +106,7 @@ document.getElementById("sizeSelection").addEventListener("change", function (e)
   chosenSize = e.target.value;
 });
 
-
+// listen to a 'click' on checkboxes and run actions according to logic
 checkedBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('click', function (e) {
     const label = document.querySelector(`label[for="${e.target.id}"]`);
@@ -138,20 +138,36 @@ checkedBoxes.forEach(function (checkbox) {
   });
 });
 
+//removing the borders around the selected toppings after clicking 'add to cart'
 function removeSelectionStyle() {
+  //get a node list of all items that has the class 'selected' lon them
   let labels = document.getElementsByClassName('selected');
+
+  //conver to an array, select each element in the array and remove 'selected' class
   Array.from(labels).forEach(function (element) {
     element.classList.remove('selected');
   });
+
+  //reset array to be empty after each selection
   selectedToppings = [];
-  checkedBoxes = [];
+
+  // uncheck all checkboxes
+  checkedBoxes.forEach(function (checkbox) {
+    checkbox.checked = false;
+  });
 };
 
+//reveal the order in the DOM
 function displayCart(pizzaToDisplay) {
+  //find the elemnt to display and epty its content
   let displayOrder = document.getElementById("display-order");
   displayOrder.innerText = null;
+
+  //create a 'ul' to store all pizzas
   let ul = document.createElement("ul");
   let totalCost = 0;
+
+  //for each pizza create a 'li' tag and add its price to 'totalCost' using calcPrice()
   Object.values(pizzaToDisplay.pizzas).forEach(function (pizza) {
     let li = document.createElement("li");
     let pizzaCost = pizza.calcPrice();
