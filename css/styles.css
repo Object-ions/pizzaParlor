@@ -51,15 +51,9 @@ select::after {
   padding: 10px;
 }
 
-/* select {
-  padding: 5px;
-  background-color: #ffe6e6;
-} */
-
 label {
   text-transform: capitalize;
   text-align: left;
-  margin-left: 10px;
 }
 
 small {
@@ -121,6 +115,14 @@ button {
   background-repeat: no-repeat;
   background-size: 30%;
   background-position: center;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 /* Id's ----------------------- */

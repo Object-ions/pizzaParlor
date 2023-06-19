@@ -83,6 +83,20 @@ checkedBoxes.forEach(function (checkbox) {
       // console.log(selectedToppings);
     } else {
       // console.log('error: ' + e.target.id + ' been removed');
+      let error = document.getElementById('error');
+
+      error = document.getElementById('error');
+
+      if (error.classList.contains('visible')) {
+        error.classList.remove('visible');
+        error.classList.add('invisible');
+      } else {
+        error.classList.remove('invisible');
+        error.classList.add('visible');
+      }
+
+      error.innerText = e.target.id + ' been removed';
+
       let index = selectedToppings.indexOf(e.target.id);
       selectedToppings.splice(index, 1);
       // console.log('new array: ' + selectedToppings);
