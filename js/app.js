@@ -1,4 +1,4 @@
-// Buisness Logic for order ---
+// Buisness Logic for order ---------------------------
 function Order() {
   this.pizzas = {};
   this.currentId = 0;
@@ -16,7 +16,7 @@ Order.prototype.assignId = function () {
 
 let order = new Order();
 
-// Buisness Logic for pizza ---
+// Buisness Logic for pizza ---------------------------
 const pizzaSize = {
   small: 10,
   medium: 12,
@@ -72,7 +72,7 @@ function addToCart() {
 };
 addToCart();
 
-// UI Logic: ---
+// UI Logic: ---------------------------
 
 let checkedBoxes = document.querySelectorAll('#selectToppings input[type=checkbox]');
 let selectedToppings = [];
@@ -114,7 +114,9 @@ checkedBoxes.forEach(function (checkbox) {
 
 function removeSelectionStyle() {
   let labels = document.getElementsByClassName('selected');
-  for (let i = 0; i < labels.length; i++) {
-    labels[i].classList.remove('selected');
-  }
+  Array.from(labels).forEach(function (element) {
+    element.classList.remove('selected');
+  });
+  selectedToppings = [];
+  checkedBoxes = [];
 }

@@ -75,6 +75,10 @@ button {
   cursor: pointer;
 }
 
+ul {
+  list-style: none;
+}
+
 /* calsses ------------------- */
 
 .main-div {
