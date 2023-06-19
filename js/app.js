@@ -128,14 +128,23 @@ function displayCart(pizzaToDisplay) {
   let displayOrder = document.getElementById("display-order");
   displayOrder.innerText = null;
   let ul = document.createElement("ul");
-  ul.innerHTML = "";
-
-  Object.values(pizzaToDisplay.pizzas).forEach(function (pizza, index) {
+  let totalCost = 0;
+  Object.values(pizzaToDisplay.pizzas).forEach(function (pizza) {
     let li = document.createElement("li");
-    li.textContent = `Pizza #${index + 1} : ${pizza.size} pizza with: ${pizza.toppings.join(', ')}. price: ${pizza.calcPrice().toFixed(2)}$`;
-    ul.append(li);
+    let pizzaCost = pizza.calcPrice();
+    totalCost += pizzaCost;
+
+    li.textContent = pizza.size + ' pizza with: ' + pizza.toppings.join(", ") + '. Price: $' + pizzaCost.toFixed(2);
+    ul.appendChild(li);
   });
-  let totalElement = displayOrder.querySelector("h3:last-child");
-  let total = Object.values(orderToDisplay.pizzas).reduce((sum, pizza) => sum + pizza.calcPrice(), 0);
-  totalElement.textContent = `Your total is: $${total.toFixed(2)}`;
+
+  let totalCostElement = document.createElement("p");
+  totalCostElement.textContent = 'Total cost: $' + totalCost.toFixed(2);
+
+  displayOrder.appendChild(ul);
+  displayOrder.appendChild(totalCostElement);
 };
+
+cart.addEventListener('click', function () {
+  displayCart(order);
+});

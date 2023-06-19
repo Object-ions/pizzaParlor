@@ -77,6 +77,8 @@ button {
 
 ul {
   list-style: none;
+  background-color: #ffffff;
+  padding: 20px;
 }
 
 /* calsses ------------------- */
@@ -174,4 +176,17 @@ ul {
   width: 200px;
   font-size: 15px;
   text-transform: uppercase;
+}
+
+#display-order {
+  height: 270px;
+  background-image: url('/img/checkputopacity.jpg');
+  background-repeat: repeat;
+  background-size: 70%;
+  background-position: center;
+}
+
+#display-order p {
+  background-color: #ffffff;
+  padding: 20px;
 }
