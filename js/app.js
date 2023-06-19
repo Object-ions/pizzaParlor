@@ -151,3 +151,17 @@ function displayCart(pizzaToDisplay) {
 cart.addEventListener('click', function () {
   displayCart(order);
 });
+
+let checkoutBtn = document.getElementById('check-out');
+let checkoutForm = document.getElementById('checkout-form');
+let closeBtn = document.getElementById('close-btn');
+
+checkoutBtn.addEventListener('click', function () {
+  checkoutForm.classList.toggle('visible');
+  checkoutForm.classList.toggle('invisible');
+});
+
+closeBtn.addEventListener('click', function () {
+  checkoutForm.classList.remove('visible');
+  checkoutForm.classList.add('invisible');
+});

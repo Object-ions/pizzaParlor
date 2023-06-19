@@ -35,7 +35,6 @@ p {
 }
 
 select {
-  /* margin-top: 20px; */
   padding: 10px 35px;
   border-radius: 20px;
   background-color: #e71433;
@@ -155,6 +154,65 @@ ul {
 .selectable.selected {
   border: 2px solid #e71433;
 }
+
+/* popup form ----------------- */
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-content {
+  background: #F7F3EA;
+  padding: 20px;
+  border-radius: 20px;
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+}
+
+form label {
+  font-family: 'Open Sans', sans-serif;
+  color: #e71433;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: none;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: #e71433 solid 1px;
+  border-radius: 20px;
+  background-color: #e71433;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.close-btn {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  font-size: 30px;
+  color: #e71433;
+  background-color: #F7F3EA;
+  cursor: pointer;
+}
+
+/* popup form end here -------*/
 
 /* Id's ----------------------- */
 #selectToppings {

@@ -11,7 +11,7 @@
   <h1>Pie-Ritual Pizza</h1>
   <div>
     <div class="main-div">
-      <!-- menu -->
+      <!-- regular menu ---------------------------->
       <div>
         <h2>Choose from our menu</h2>
         <div class="menu">
@@ -46,7 +46,8 @@
           </div>
         </div>
       </div>
-      <!-- build your own ------------------------------ -->
+      <!-- end regular menu ------------------------->
+      <!-- build your own --------------------------->
       <div class="your-own">
         <h2>Build your own</h2>
         <h3>choose your size:</h3>
@@ -55,7 +56,7 @@
           <option id="medium" value="medium">Medium</option>
           <option id="large" value="large">Large</option>
         </select>
-        <!-- toppings ----------------------------------- -->
+        <!-- toppings -->
         <h3>select your toppings:</h3>
         <div id="selectToppings">
           <div class="selectable" id="pepperoni-wrapper">
@@ -94,18 +95,37 @@
             <input class="hidden-checkbox" id="anchovies" type="checkbox">
             <label for="anchovies">anchovies - $1.59</label>
           </div>
+          <!-- error msg -->
           <small id="error" class="invisible">Error message here</small>
         </div>
       </div>
     </div>
+    <!-- end build your own ------------------------->
     <button id="cart">add to cart</button>
   </div>
   <div id="display-order">
   </div>
 
   <button id="check-out" class="invisible">Check Out</button>
-
-
+  <!-- popup window --------------------------->
+  <div id="checkout-form" class="invisible form-overlay">
+    <div class="form-content">
+      <span id="close-btn" class="close-btn">X</span>
+      <h2>Check Out</h2>
+      <form>
+        <label for="name">Name</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="address">Address</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="phone">Phone</label><br>
+        <input type="tel" id="phone" name="phone"><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br>
+        <button type="submit" id="submit-btn">Place Order</button>
+      </form>
+    </div>
+  </div>
+  <!-- end popup window --------------------------->
   <script src="js/app.js"></script>
 </body>
 
