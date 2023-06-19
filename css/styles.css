@@ -1,10 +1,4 @@
-/* colors: blue = #283D9B
-        off-white = #F7F3EA
-        orange = #F79525
-        light orange = #FBC268
-        red = #F25A71 */
-
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Open+Sans:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Open+Sans:wght@300;400;500;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -22,9 +16,48 @@ body {
 }
 
 h1 {
-  font-family: 'Bagel Fat One', cursive;
-  font-size: 70px;
-  margin: 0 auto;
+  font-family: 'Concert One', cursive;
+  font-size: 80px;
+  margin: 10px 0 25px 0;
+}
+
+h2,
+h3 {
+  text-transform: capitalize;
+}
+
+p {
+  margin: 0;
+}
+
+label {
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.main-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  width: 450px;
+  margin: 0;
+  padding: 0;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.menu-item {
+  margin-bottom: 20px;
+}
+
+.your-own {
+  width: 450px;
+  margin: 0;
+  padding: 0;
 }
 
 .halfpie-top {
@@ -43,4 +76,17 @@ h1 {
   background-repeat: no-repeat;
   background-size: 30%;
   background-position: center;
+}
+
+#cart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #aa0000;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#error {
+  color: red;
 }
