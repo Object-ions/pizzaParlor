@@ -24,15 +24,15 @@ const pizzaSize = {
 };
 
 const toppingsPrices = {
-  mushrooms: 0.5,
-  onions: 0.5,
-  peppers: 0.5,
-  olives: 0.5,
-  tomatoes: 0.5,
-  anchovies: 1,
-  pineapple: 1,
-  artichoke: 1,
-  pepperoni: 1.5
+  mushrooms: 0.59,
+  onions: 0.59,
+  peppers: 0.59,
+  olives: 0.59,
+  tomatoes: 0.59,
+  anchovies: 1.59,
+  pineapple: 1.59,
+  artichoke: 1.59,
+  pepperoni: 2.99,
 };
 
 function Pizza(toppings, size) {
@@ -51,14 +51,21 @@ Pizza.prototype.calcPrice = function () {
 function addToCart() {
   let cart = document.getElementById('cart');
   cart.addEventListener('click', function () {
-    if (chosenSize !== undefined && selectedToppings.length > 0) {
+    let error = document.getElementById('error');
+    if (chosenSize === "select" || selectedToppings.length === 0) { // assuming the first option value is "select"
+      error.textContent = 'Please select a pizza size and at least one topping';
+      error.classList.remove('invisible');
+      error.classList.add('visible');
+    } else {
       let myPizza = new Pizza(selectedToppings, chosenSize);
       order.addPizza(myPizza);
       console.log(chosenSize + ' pizza with: ' + selectedToppings);
       console.log('price: ' + myPizza.calcPrice());
       console.log('order so far: ', order);
-    } else {
-      document.getElementById('error').textContent = 'select a pizza size toppings';
+
+      // Hide the error message if user selects a pizza size and at least one topping.
+      error.classList.remove('visible');
+      error.classList.add('invisible');
     }
   });
 };
@@ -84,18 +91,14 @@ checkedBoxes.forEach(function (checkbox) {
     } else {
       // console.log('error: ' + e.target.id + ' been removed');
       let error = document.getElementById('error');
+      error.innerText = e.target.id + ' been removed';
+      error.classList.remove('invisible');
+      error.classList.add('visible');
 
-      error = document.getElementById('error');
-
-      if (error.classList.contains('visible')) {
+      setTimeout(function () {
         error.classList.remove('visible');
         error.classList.add('invisible');
-      } else {
-        error.classList.remove('invisible');
-        error.classList.add('visible');
-      }
-
-      error.innerText = e.target.id + ' been removed';
+      }, 700);
 
       let index = selectedToppings.indexOf(e.target.id);
       selectedToppings.splice(index, 1);
