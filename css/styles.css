@@ -11,14 +11,16 @@
 }
 
 body {
-  background-color: #f9fafb;
+  background-color: #F7F3EA;
   font-family: 'Open Sans', 'sans-serif';
+  color: #283D9B;
   margin: 0 auto;
   text-align: center;
 }
 
 h1 {
   font-family: 'Bagel Fat One', cursive;
+  font-size: 70px;
 }
 
 .flex-center {
@@ -26,4 +28,11 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.halfpie {
+  height: 500px;
+  background-image: url('/img/halfpietop.png');
+  background-repeat: no-repeat;
+  /* background-size: cover; */
 }
