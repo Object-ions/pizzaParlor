@@ -13,26 +13,34 @@
 body {
   background-color: #F7F3EA;
   font-family: 'Open Sans', 'sans-serif';
-  color: #283D9B;
+  color: #e71433;
   margin: 0 auto;
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
 h1 {
   font-family: 'Bagel Fat One', cursive;
   font-size: 70px;
+  margin: 0 auto;
 }
 
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.halfpie {
-  height: 500px;
+.halfpie-top {
+  height: 170px;
+  text-align: center;
   background-image: url('/img/halfpietop.png');
   background-repeat: no-repeat;
-  /* background-size: cover; */
+  background-size: 30%;
+  background-position: center;
+}
+
+.halfpie-btm {
+  height: 170px;
+  text-align: center;
+  background-image: url('/img/halfpiebtm.png');
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: center;
 }
