@@ -59,6 +59,9 @@ function addToCart() {
     } else {
       let myPizza = new Pizza(selectedToppings, chosenSize);
       order.addPizza(myPizza);
+
+      displayCart(order);
+
       console.log(chosenSize + ' pizza with: ' + selectedToppings);
       console.log('price: ' + myPizza.calcPrice());
       console.log('order so far: ', order);
@@ -119,4 +122,20 @@ function removeSelectionStyle() {
   });
   selectedToppings = [];
   checkedBoxes = [];
-}
+};
+
+function displayCart(pizzaToDisplay) {
+  let displayOrder = document.getElementById("display-order");
+  displayOrder.innerText = null;
+  let ul = document.createElement("ul");
+  ul.innerHTML = "";
+
+  Object.values(pizzaToDisplay.pizzas).forEach(function (pizza, index) {
+    let li = document.createElement("li");
+    li.textContent = `Pizza #${index + 1} : ${pizza.size} pizza with: ${pizza.toppings.join(', ')}. price: ${pizza.calcPrice().toFixed(2)}$`;
+    ul.append(li);
+  });
+  let totalElement = displayOrder.querySelector("h3:last-child");
+  let total = Object.values(orderToDisplay.pizzas).reduce((sum, pizza) => sum + pizza.calcPrice(), 0);
+  totalElement.textContent = `Your total is: $${total.toFixed(2)}`;
+};
