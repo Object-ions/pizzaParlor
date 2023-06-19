@@ -9,98 +9,98 @@
 <body>
   <div class="halfpie-top"></div>
   <h1>Pie-Ritual Pizza</h1>
-  <div class="main-div">
-    <!-- menu -->
-    <div>
-      <h2>Choose from our menu</h2>
-      <div class="menu">
-        <div class="menu-item">
-          <h3>Margherita Pizza</h3>
-          <p>Classic pizza with fresh mozzarella, ripe tomatoes, and fresh basil.</p>
-          <p class="price">$10.99</p>
-        </div>
-
-        <div class="menu-item">
-          <h3>Pepperoni Pizza</h3>
-          <p>Savory pepperoni slices on top of our classic cheese pizza.</p>
-          <p class="price">$12.99</p>
-        </div>
-
-        <div class="menu-item">
-          <h3>Vegetarian Pizza</h3>
-          <p>Loaded with bell peppers, onions, mushrooms, black olives, and ripe tomatoes.</p>
-          <p class="price">$11.99</p>
-        </div>
-
-        <div class="menu-item">
-          <h3>Hawaiian Pizza</h3>
-          <p>Sweet pineapple paired with salty ham, a tropical treat.</p>
-          <p class="price">$13.99</p>
-        </div>
-
-        <div class="menu-item">
-          <h3>BBQ Chicken Pizza</h3>
-          <p>Grilled chicken, sweet & tangy BBQ sauce, red onions, and cilantro.</p>
-          <p class="price">$14.99</p>
-        </div>
-      </div>
-    </div>
-    <!-- build your own ------------------------------ -->
-    <div class="your-own">
-      <h2>Build your own</h2>
-      <h3>choose your size:</h3>
-      <select id="sizeSelection">
-        <option id="small" value="small">small</option>
-        <option id="medium" value="medium">medium</option>
-        <option id="large" value="large">large</option>
-      </select>
-      <!-- toppings ----------------------------------- -->
-      <h3>select your toppings:</h3>
-      <div id="selectToppings">
-        <div class="selectable" id="pepperoni-wrapper">
-          <input class="hidden-checkbox" id="pepperoni" type="checkbox">
-          <label for="pepperoni">savory pepperoni</label>
-        </div>
-        <div class="selectable" id="mushrooms-wrapper">
-          <input class="hidden-checkbox" id="mushrooms" type="checkbox">
-          <label for="mushrooms">forest mushrooms</label>
-        </div>
-        <div class="selectable" id="onions-wrapper">
-          <input class="hidden-checkbox" id="onions" type="checkbox">
-          <label for="onions">red onions</label>
-        </div>
-        <div class="selectable" id="peppers-wrapper">
-          <input class="hidden-checkbox" id="peppers" type="checkbox">
-          <label for="peppers">bell peppers</label>
-        </div>
-        <div class="selectable" id="olives-wrapper">
-          <input class="hidden-checkbox" id="olives" type="checkbox">
-          <label for="olives">black olives</label>
-        </div>
-        <div class="selectable" id="tomatoes-wrapper">
-          <input class="hidden-checkbox" id="tomatoes" type="checkbox">
-          <label for="tomatoes">ripe tomatoes</label>
-        </div>
-        <div class="selectable" id="pineapple-wrapper">
-          <input class="hidden-checkbox" id="pineapple" type="checkbox">
-          <label for="pineapple">sweet pineapple</label>
-        </div>
-        <div class="selectable" id="artichoke-wrapper">
-          <input class="hidden-checkbox" id="artichoke" type="checkbox">
-          <label for="artichoke">Jerusalem artichoke</label>
-        </div>
-        <div class="selectable" id="anchovies-wrapper">
-          <input class="hidden-checkbox" id="anchovies" type="checkbox">
-          <label for="anchovies">anchovies</label>
-        </div>
-      </div>
+  <div>
+    <div class="main-div">
+      <!-- menu -->
       <div>
-        <small id="error" class="invisible">Error message here</small>
-        <button id="cart">add to cart</button>
+        <h2>Choose from our menu</h2>
+        <div class="menu">
+          <div class="menu-item">
+            <h3>Margherita Pizza</h3>
+            <p>Classic pizza with fresh mozzarella, ripe tomatoes, and fresh basil.</p>
+            <p class="price">$10.99</p>
+          </div>
+
+          <div class="menu-item">
+            <h3>Pepperoni Pizza</h3>
+            <p>Savory pepperoni slices on top of our classic cheese pizza.</p>
+            <p class="price">$12.99</p>
+          </div>
+
+          <div class="menu-item">
+            <h3>Vegetarian Pizza</h3>
+            <p>Loaded with bell peppers, onions, mushrooms, black olives, and ripe tomatoes.</p>
+            <p class="price">$11.99</p>
+          </div>
+
+          <div class="menu-item">
+            <h3>Hawaiian Pizza</h3>
+            <p>Sweet pineapple paired with salty ham, a tropical treat.</p>
+            <p class="price">$13.99</p>
+          </div>
+
+          <div class="menu-item">
+            <h3>BBQ Chicken Pizza</h3>
+            <p>Grilled chicken, sweet & tangy BBQ sauce, red onions, and cilantro.</p>
+            <p class="price">$14.99</p>
+          </div>
+        </div>
+      </div>
+      <!-- build your own ------------------------------ -->
+      <div class="your-own">
+        <h2>Build your own</h2>
+        <h3>choose your size:</h3>
+        <select id="sizeSelection">
+          <option id="small" value="small">Small</option>
+          <option id="medium" value="medium">Medium</option>
+          <option id="large" value="large">Large</option>
+        </select>
+        <!-- toppings ----------------------------------- -->
+        <h3>select your toppings:</h3>
+        <div id="selectToppings">
+          <div class="selectable" id="pepperoni-wrapper">
+            <input class="hidden-checkbox" id="pepperoni" type="checkbox">
+            <label for="pepperoni">savory pepperoni - $2.99</label>
+          </div>
+          <div class="selectable" id="mushrooms-wrapper">
+            <input class="hidden-checkbox" id="mushrooms" type="checkbox">
+            <label for="mushrooms">forest mushrooms - $0.59</label>
+          </div>
+          <div class="selectable" id="onions-wrapper">
+            <input class="hidden-checkbox" id="onions" type="checkbox">
+            <label for="onions">red onions - $0.59 </label>
+          </div>
+          <div class="selectable" id="peppers-wrapper">
+            <input class="hidden-checkbox" id="peppers" type="checkbox">
+            <label for="peppers">bell peppers - $0.59</label>
+          </div>
+          <div class="selectable" id="olives-wrapper">
+            <input class="hidden-checkbox" id="olives" type="checkbox">
+            <label for="olives">black olives - $0.59</label>
+          </div>
+          <div class="selectable" id="tomatoes-wrapper">
+            <input class="hidden-checkbox" id="tomatoes" type="checkbox">
+            <label for="tomatoes">ripe tomatoes - $0.59</label>
+          </div>
+          <div class="selectable" id="pineapple-wrapper">
+            <input class="hidden-checkbox" id="pineapple" type="checkbox">
+            <label for="pineapple">sweet pineapple - $1.59</label>
+          </div>
+          <div class="selectable" id="artichoke-wrapper">
+            <input class="hidden-checkbox" id="artichoke" type="checkbox">
+            <label for="artichoke">Jerusalem artichoke - $1.59</label>
+          </div>
+          <div class="selectable" id="anchovies-wrapper">
+            <input class="hidden-checkbox" id="anchovies" type="checkbox">
+            <label for="anchovies">anchovies - $1.59</label>
+          </div>
+          <small id="error" class="invisible">Error message here</small>
+        </div>
       </div>
     </div>
+    <button id="cart">add to cart</button>
   </div>
-  <div class="halfpie-btm"></div>
+  <!-- <div class="halfpie-btm"></div> -->
 
   <script src="js/app.js"></script>
 </body>

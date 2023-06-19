@@ -35,8 +35,8 @@ p {
 }
 
 select {
-  margin-top: 20px;
-  padding: 10px 20px;
+  /* margin-top: 20px; */
+  padding: 10px 35px;
   border-radius: 20px;
   background-color: #e71433;
   color: white;
@@ -133,10 +133,25 @@ button {
   transition: visibility 0s, opacity 0.5s linear;
 }
 
+.hidden-checkbox {
+  display: none;
+}
+
+.selectable {
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  transition: border 0.3s;
+}
+
+.selectable.selected {
+  border: 2px solid #e71433;
+}
+
 /* Id's ----------------------- */
 #selectToppings {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   margin-bottom: 10px;
 }
@@ -151,18 +166,8 @@ button {
   font-weight: bold;
 }
 
-/*  */
-
-.hidden-checkbox {
-  display: none;
-}
-
-.selectable {
-  display: inline-block;
-  padding: 10px;
-  transition: border 0.3s;
-}
-
-.selectable.selected {
-  border: 2px solid #e71433;
+#cart {
+  width: 200px;
+  font-size: 15px;
+  text-transform: uppercase;
 }
