@@ -30,10 +30,54 @@ p {
   margin: 0;
 }
 
+select {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #e71433;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+select::after {
+  content: "⌄";
+  font-size: 10px;
+  color: white;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+}
+
+/* select {
+  padding: 5px;
+  background-color: #ffe6e6;
+} */
+
 label {
   text-transform: capitalize;
   text-align: left;
+  margin-left: 10px;
 }
+
+small {
+  display: block;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: #e71433 solid 1px;
+  border-radius: 20px;
+  background-color: #e71433;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* calsses ------------------- */
 
 .main-div {
   display: flex;
@@ -57,6 +101,7 @@ label {
 .your-own {
   width: 450px;
   margin: 0;
+  margin-bottom: 20px;
   padding: 0;
 }
 
@@ -78,15 +123,20 @@ label {
   background-position: center;
 }
 
-#cart {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #aa0000;
-  color: white;
-  border: none;
-  cursor: pointer;
+/* Id's ----------------------- */
+#selectToppings {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+#selectToppings input[type="checkbox"] {
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
 #error {
-  color: red;
+  color: #e71433;
+  font-weight: bold;
 }
