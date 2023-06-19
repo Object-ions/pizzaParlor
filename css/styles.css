@@ -21,9 +21,13 @@ h1 {
   margin: 10px 0 25px 0;
 }
 
-h2,
+h2 {
+  text-transform: capitalize;
+}
+
 h3 {
   text-transform: capitalize;
+  margin-bottom: 3px;
 }
 
 p {
@@ -145,4 +149,20 @@ button {
 #error {
   color: #e71433;
   font-weight: bold;
+}
+
+/*  */
+
+.hidden-checkbox {
+  display: none;
+}
+
+.selectable {
+  display: inline-block;
+  padding: 10px;
+  transition: border 0.3s;
+}
+
+.selectable.selected {
+  border: 2px solid #e71433;
 }

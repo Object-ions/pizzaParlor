@@ -76,7 +76,7 @@ addToCart();
 let checkedBoxes = document.querySelectorAll('#selectToppings input[type=checkbox]');
 let selectedToppings = [];
 
-let chosenSize;
+let chosenSize = 'small';
 document.getElementById("sizeSelection").addEventListener("change", function (e) {
   chosenSize = e.target.value;
   // console.log(chosenSize);
@@ -84,10 +84,12 @@ document.getElementById("sizeSelection").addEventListener("change", function (e)
 
 checkedBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('click', function (e) {
+    const label = document.querySelector(`label[for="${e.target.id}"]`);
     if (e.target.checked) {
       // console.log(e.target.id);
       selectedToppings.push(e.target.id)
       // console.log(selectedToppings);
+      label.parentElement.classList.add('selected');
     } else {
       // console.log('error: ' + e.target.id + ' been removed');
       let error = document.getElementById('error');
@@ -103,6 +105,7 @@ checkedBoxes.forEach(function (checkbox) {
       let index = selectedToppings.indexOf(e.target.id);
       selectedToppings.splice(index, 1);
       // console.log('new array: ' + selectedToppings);
+      label.parentElement.classList.remove('selected');
     };
     // console.log('final array: ' + selectedToppings);
   });
