@@ -1,4 +1,5 @@
-// Buisness Logic for order ---------------------------
+// Buisness logic for Order ------------
+
 function Order() {
   this.pizzas = {};
   this.currentId = 0;
@@ -16,7 +17,8 @@ Order.prototype.assignId = function () {
 
 let order = new Order();
 
-// Buisness Logic for pizza ---------------------------
+// Buisness logic for Pizza ------------
+
 const pizzaSize = {
   small: 10,
   medium: 12,
@@ -48,46 +50,62 @@ Pizza.prototype.calcPrice = function () {
   return pizzaSize[this.size] + calcToppings;
 };
 
+// Buisness logic for the main function ------------
+
+//set a new empty array
+let selectedToppings = [];
+
+//make a defualt selection- 'small'
+let chosenSize = 'small';
+
 function addToCart() {
+
+  //listen to click on 'add to cart'
   let cart = document.getElementById('cart');
   cart.addEventListener('click', function () {
+
+    //if the user didnt select 'pizza size' and 'toppings' show 'error'
     let error = document.getElementById('error');
     if (chosenSize === "select" || selectedToppings.length === 0) {
       error.textContent = 'Please select a pizza size and at least one topping';
       error.classList.remove('invisible');
       error.classList.add('visible');
+
     } else {
+
+      //initiate new instance based on toppings and size
       let myPizza = new Pizza(selectedToppings, chosenSize);
       order.addPizza(myPizza);
 
+      //display the order status on the DOM
       displayCart(order);
 
-      console.log(chosenSize + ' pizza with: ' + selectedToppings);
-      console.log('price: ' + myPizza.calcPrice());
-      console.log('order so far: ', order);
-
-      // Hide the error message if user selects a pizza size and at least one topping.
       error.classList.remove('visible');
       error.classList.add('invisible');
     }
+    //clear the selected toppings borders
     removeSelectionStyle();
+
+    //reveal the button 'check out'
     let checkout = document.getElementById('check-out');
     checkout.removeAttribute('class', 'invisible');
     checkout.setAttribute('class', 'visible');
   });
 };
+
+//call to execute
 addToCart();
 
 // UI Logic: ---------------------------
 
+//get the chosen checkboxes
 let checkedBoxes = document.querySelectorAll('#selectToppings input[type=checkbox]');
-let selectedToppings = [];
 
-let chosenSize = 'small';
+//listen to the drop down menu and get the value of selection
 document.getElementById("sizeSelection").addEventListener("change", function (e) {
   chosenSize = e.target.value;
-  // console.log(chosenSize);
 });
+
 
 checkedBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('click', function (e) {
