@@ -4,7 +4,7 @@
 
  this project is a detailed, user-friendly interface for creating a custom pizza order that demonstrates real-world functionalities of a pizza ordering system.
 
-_Live demo: [GH-pages](#)_
+_Live demo: [GH-pages](https://object-ions.github.io/pizzaParlor/)_
 
 ## Technologies Used
 
