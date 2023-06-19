@@ -111,25 +111,27 @@ checkedBoxes.forEach(function (checkbox) {
   checkbox.addEventListener('click', function (e) {
     const label = document.querySelector(`label[for="${e.target.id}"]`);
     if (e.target.checked) {
-      // console.log(e.target.id);
+      // get the chosen topping and add it to the array
       selectedToppings.push(e.target.id)
-      // console.log(selectedToppings);
+
+      //show a border around the chosen topping
       label.parentElement.classList.add('selected');
     } else {
-      // console.log('error: ' + e.target.id + ' been removed');
+      // show an error message on the DOM when item got diselected using the classes 'visible' / 'invisible'
       let error = document.getElementById('error');
       error.innerText = e.target.id + ' been removed';
       error.classList.remove('invisible');
       error.classList.add('visible');
 
+      //add animation to add / remove classes 'visible' / 'invisible'
       setTimeout(function () {
         error.classList.remove('visible');
         error.classList.add('invisible');
       }, 700);
 
+      //remove the elemnt that got deselected from the array at the index poition
       let index = selectedToppings.indexOf(e.target.id);
       selectedToppings.splice(index, 1);
-      // console.log('new array: ' + selectedToppings);
       label.parentElement.classList.remove('selected');
     };
     // console.log('final array: ' + selectedToppings);
