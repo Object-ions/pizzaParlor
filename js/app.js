@@ -52,7 +52,7 @@ function addToCart() {
   let cart = document.getElementById('cart');
   cart.addEventListener('click', function () {
     let error = document.getElementById('error');
-    if (chosenSize === "select" || selectedToppings.length === 0) { // assuming the first option value is "select"
+    if (chosenSize === "select" || selectedToppings.length === 0) {
       error.textContent = 'Please select a pizza size and at least one topping';
       error.classList.remove('invisible');
       error.classList.add('visible');
@@ -67,6 +67,7 @@ function addToCart() {
       error.classList.remove('visible');
       error.classList.add('invisible');
     }
+    removeSelectionStyle();
   });
 };
 addToCart();
@@ -110,3 +111,10 @@ checkedBoxes.forEach(function (checkbox) {
     // console.log('final array: ' + selectedToppings);
   });
 });
+
+function removeSelectionStyle() {
+  let labels = document.getElementsByClassName('selected');
+  for (let i = 0; i < labels.length; i++) {
+    labels[i].classList.remove('selected');
+  }
+}
