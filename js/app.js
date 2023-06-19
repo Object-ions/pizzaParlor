@@ -1,15 +1,18 @@
 // Buisness logic for Order ------------
 
+//function constractor for the big order that will include an object of pizzas
 function Order() {
   this.pizzas = {};
   this.currentId = 0;
 };
 
+//adding a prototype to order constructor with a method to add the pizza to the order
 Order.prototype.addPizza = function (pizza) {
   pizza.id = this.assignId();
   this.pizzas[pizza.id] = pizza;
 };
 
+//adding a prototype to the big order that will assign an id for the pizzas
 Order.prototype.assignId = function () {
   this.currentId += 1;
   return this.currentId;
@@ -19,12 +22,14 @@ let order = new Order();
 
 // Buisness logic for Pizza ------------
 
+//difine sizes and prices
 const pizzaSize = {
   small: 10,
   medium: 12,
   large: 13,
 };
 
+//define cost of toppings
 const toppingsPrices = {
   mushrooms: 0.59,
   onions: 0.59,
@@ -37,11 +42,13 @@ const toppingsPrices = {
   pepperoni: 2.99,
 };
 
+//function constractor for Pizza with toppings and size
 function Pizza(toppings, size) {
   this.toppings = toppings;
   this.size = size;
 };
 
+//adding a prototype to Pizza constructor with a method to calculate the price of the selected size and toppings
 Pizza.prototype.calcPrice = function () {
   let calcToppings = 0;
   for (let i = 0; i < this.toppings.length; i++) {
@@ -157,7 +164,7 @@ function removeSelectionStyle() {
   });
 };
 
-//reveal the order in the DOM
+//reveal the order and cost in the DOM
 function displayCart(pizzaToDisplay) {
   //find the elemnt to display and epty its content
   let displayOrder = document.getElementById("display-order");
@@ -173,30 +180,37 @@ function displayCart(pizzaToDisplay) {
     let pizzaCost = pizza.calcPrice();
     totalCost += pizzaCost;
 
+    //describe the pizza and append the 'li' to 'ul', make sure that it will show only 2 degits of deciamal
     li.textContent = pizza.size + ' pizza with: ' + pizza.toppings.join(", ") + '. Price: $' + pizzaCost.toFixed(2);
     ul.appendChild(li);
   });
 
+  // set the content to total cost of pizza
   let totalCostElement = document.createElement("p");
   totalCostElement.textContent = 'Total cost: $' + totalCost.toFixed(2);
 
+  //append to DOM
   displayOrder.appendChild(ul);
   displayOrder.appendChild(totalCostElement);
 };
 
+//when clicking on 'cart' execute 'displayCart'
 cart.addEventListener('click', function () {
   displayCart(order);
 });
 
+// added buttons for interation with the user
 let checkoutBtn = document.getElementById('check-out');
 let checkoutForm = document.getElementById('checkout-form');
 let closeBtn = document.getElementById('close-btn');
 
+//when clicking on 'check out' pop up the form from the user
 checkoutBtn.addEventListener('click', function () {
   checkoutForm.classList.toggle('visible');
   checkoutForm.classList.toggle('invisible');
 });
 
+//when clicking on 'X' close pop up window
 closeBtn.addEventListener('click', function () {
   checkoutForm.classList.remove('visible');
   checkoutForm.classList.add('invisible');
